@@ -1,4 +1,4 @@
-use std::io;
+// use std::io;
 
 fn main() {
     constants();
@@ -6,9 +6,49 @@ fn main() {
     shadowing_typeswitch();
     tuples();
     arrays();
-    array_element_finder();
+    // array_element_finder();
+
+    // Functions
+    print_labeled_measurement(5, 'h');
+    expressions();
+    fn_with_return_value();
+    call_plus_one();
 }
 
+fn call_plus_one() {
+    let x = plus_one(5);
+
+    println!("The value of x is {x}");
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1
+}
+
+fn fn_with_return_value() {
+    let x = five();
+
+    println!("The returned value is {x}");
+}
+
+fn five() -> i32 {
+    5
+}
+
+fn expressions() {
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is {y}");
+}
+
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("The measurement is: {value} - {unit_label}");
+}
+
+/*
 fn array_element_finder() {
     let a = [1, 2, 3, 4, 5];
 
@@ -29,6 +69,7 @@ fn array_element_finder() {
 
     println!("The value of the element at index {index} is: {element}");
 }
+*/
 
 fn constants() {
     const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
